@@ -134,3 +134,7 @@
   name: Rogerio Robetti
   profile: https://www.linkedin.com/in/rogerio-robetti/
   bio: Rogerio Robetti is the creator of Open J Proxy (OJP), software engineer, and architect with deep experience in large-scale systems at large global companies. Passionate about open source and database scalability, Rogerio has written and spoken about distributed systems, connection management, and resilient Java design. He believes in giving power back to developers by building tools that are open, extensible, and community-driven.
+- id: catherineedelveis
+  name: Catherine Edelveis
+  profile: https://www.linkedin.com/in/cat-edelveis/
+  bio: Catherine Edelveis is a Developer Advocate at BellSoft and the co-host of CyberJAR, a YouTube channel dedicated to practical, state-of-the-art Java. She is focused on the JVM ecosystem and helps teams ship performant and secure cloud-native Java applications using modern OpenJDK capabilities and proven open-source tools. Passionate about sharing knowledge, she is a conference speaker, an active technical writer, and a host of regular livestreams with leaders from across the Java community.

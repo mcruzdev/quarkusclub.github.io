@@ -1,2 +1,161 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+
+@theme {
+  --font-display: 'Bebas Neue', system-ui, sans-serif;
+  --font-heading: 'Open Sans', system-ui, sans-serif;
+  --font-body: 'Hanken Grotesk', system-ui, sans-serif;
+
+  --color-brand-red: #b20738;
+  --color-brand-red-light: #d41a4a;
+  --color-brand-red-dark: #8a052c;
+  --color-accent-warm: #c43a1c;
+  --color-accent-cool: #8a1a4a;
+  --color-discord: #5865F2;
+  --color-discord-dark: #4752C4;
+
+  --color-base: #000000;
+  --color-surface-1: #1a1a1a;
+  --color-surface-2: #262626;
+  --color-surface-3: #333333;
+  --color-border: #3a3a3a;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #d6d6d6;
+  --color-text-muted: #9a9a9a;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-body);
+    color: var(--color-text-secondary);
+    background-color: var(--color-base);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+
+  h2, h3 {
+    font-weight: 700;
+  }
+
+  h4, h5, h6 {
+    font-weight: 600;
+  }
+
+  .subheading, .subtitle, .lead {
+    font-family: var(--font-body);
+    font-weight: 500;
+  }
+
+  header a.text-xl,
+  header a.text-2xl,
+  .brand, .site-title {
+    font-family: var(--font-heading);
+    font-weight: 700;
+  }
+
+  nav a, .nav-item, .menu-item {
+    font-family: var(--font-body);
+    font-weight: 500;
+  }
+
+  nav a:hover,
+  footer a:hover {
+    opacity: 0.8;
+  }
+}
+
+@layer components {
+  .prose {
+    color: var(--color-text-secondary);
+  }
+
+  .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+    color: var(--color-text-primary);
+  }
+
+  .prose a:not(.text-white) {
+    color: var(--color-brand-red-light);
+    text-decoration: underline;
+  }
+
+  .prose a:not(.text-white):hover {
+    color: var(--color-brand-red);
+  }
+
+  .prose strong {
+    color: var(--color-text-primary);
+  }
+
+  .prose code {
+    color: var(--color-text-primary);
+  }
+
+  .prose blockquote {
+    color: var(--color-text-muted);
+  }
+}
+
+@layer utilities {
+  .text-text-secondary {
+    color: var(--color-text-secondary) !important;
+  }
+
+  .text-text-primary {
+    color: var(--color-text-primary) !important;
+  }
+
+  .text-text-muted {
+    color: var(--color-text-muted) !important;
+  }
+
+  .glow-red {
+    box-shadow: 0 0 12px rgba(178, 7, 56, 0.08),
+      0 0 40px rgba(178, 7, 56, 0.03);
+  }
+
+  .glow-red-hover:hover {
+    box-shadow: 0 0 16px rgba(178, 7, 56, 0.12),
+      0 0 50px rgba(178, 7, 56, 0.05);
+  }
+
+  .noise-bg {
+    position: relative;
+  }
+
+  .noise-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 256px 256px;
+    border-radius: inherit;
+  }
+
+  .line-accent::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 100%;
+    background: var(--color-brand-red);
+    border-radius: 2px;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
